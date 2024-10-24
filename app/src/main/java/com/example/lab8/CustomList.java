@@ -51,11 +51,19 @@ public class CustomList extends ArrayAdapter<City> {
 
     /**
      * this adds a city object to the list
-     *the second phase, you can add the
-     city * @param city
+     *the second phase, you can add the city
+     * @param city
      */
     public void addCity(City city){
         cities.add(city);
     }
 
+    /**
+     * Checks if the given city exists in the list
+     * @param city
+     * @return true if city exists, false if not
+     */
+    public boolean hasCity(City city){
+        return false;
+    }
 }
