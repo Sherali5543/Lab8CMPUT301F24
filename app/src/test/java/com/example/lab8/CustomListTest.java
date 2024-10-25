@@ -57,8 +57,12 @@ public class CustomListTest {
         assertTrue(list.hasCity(city));
     }
 
+    /**
+     * Ensures cannot delete a city that doesn't exist
+     * Ensures deletes city
+     */
     @Test
-    public void deleteCity(){
+    public void deleteCityTest(){
         list = MockCityList();
         int listSize = list.getCount();
         City city = new City("Edmonton", "AB");
@@ -68,5 +72,14 @@ public class CustomListTest {
         listSize = list.getCount();
         list.deleteCity(city);
         assertEquals(list.getCount(), listSize-1);
+    }
+
+    @Test
+    public void countCitiesTest(){
+        list = MockCityList();
+        int listSize = list.getCount();
+        assertEquals(list.countCities(), listSize);
+        list.addCity(new City("Edmonton","AB"));
+        assertEquals(list.countCities(), listSize+1);
     }
 }
